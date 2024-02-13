@@ -14,7 +14,7 @@ def status() -> str:
     return jsonify({"status": "OK"})
 
 
-@app_views.route('/stats/', strict_slashes=False)
+@app_views.route('/stats/',  methods=['GET'], strict_slashes=False)
 def stats() -> str:
     """ GET /api/v1/stats
     Return:
@@ -26,7 +26,7 @@ def stats() -> str:
     return jsonify(stats)
 
 
-@app_views.route('/unauthorized/', strict_slashes=False)
+@app_views.route('/unauthorized/', methods=['GET'],  strict_slashes=False)
 def not_authorized() -> None:
     """ GET /api/v1/unauthorized
     Return:
@@ -35,7 +35,7 @@ def not_authorized() -> None:
     abort(401)
 
 
-@app_views.route('/forbidden/', strict_slashes=False)
+@app_views.route('/forbidden/',  methods=['GET'], strict_slashes=False)
 def forbidden() -> None:
     """GET /api/v1/forbidden
     Return:
