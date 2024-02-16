@@ -48,7 +48,7 @@ class BasicAuth(Auth):
             decoded_base64_authorization_header: str,
             ) -> Tuple[str, str]:
         """get  user credentials from a base64-decoded authorization
-        header 
+        header
         """
         if type(decoded_base64_authorization_header) == str:
             match = re.fullmatch(
