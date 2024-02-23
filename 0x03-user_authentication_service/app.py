@@ -22,7 +22,7 @@ def users() -> str:
     Return:
         - created user.
     """
-    data = request.form()
+    data = request.form
     email = data['email']
     password = data['password']
 
@@ -39,7 +39,7 @@ def login() -> str:
     Return:
         - logged in user
     """
-    data = request.form()
+    data = request.form
     email = data['email']
     password = data['password']
 
@@ -87,7 +87,7 @@ def get_reset_password_token() -> str:
     Return:
         - user's email and reset token
     """
-    data = request.form()
+    data = request.form
     email = data['email']
     try:
         reset_token = AUTH.get_reset_password_token(email)
@@ -102,7 +102,7 @@ def update() -> str:
     Return:
         - user's email and messsage as payload
     """
-    data = request.form()
+    data = request.form
     email = data['email']
     new_password = data['new_password']
     reset_token = request.form.get("reset_token")
